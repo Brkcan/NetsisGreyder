@@ -7,8 +7,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Pattern;
-import javax.validation.constraints.Size;
 
 
 @Entity
@@ -22,13 +20,14 @@ public class User {
 	
 	@NotNull
 	@Column(name = "username")
+	@UniqueUsername
 	private String username;
 	
-	
+	@NotNull
 	@Column(name = "displayname")
 	private String displayName;
 	
-	@NotNull
+	
 	@Column(name = "password")
 	private String password;
 
